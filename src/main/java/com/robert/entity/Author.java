@@ -1,9 +1,8 @@
 package com.robert.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import org.hibernate.annotations.Fetch;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
@@ -18,7 +17,7 @@ public class Author implements Serializable {
 
     private String name;
 
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authors",fetch = FetchType.EAGER)
     private Set<Book> books;
 
     public Author() {

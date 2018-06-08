@@ -21,6 +21,7 @@
         </property>
     </bean>
 
+
     <import resource="classpath:jdbc.xml"/>
 
     <mvc:resources mapping="/images/**" location="/images/"/>

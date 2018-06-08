@@ -16,7 +16,7 @@ public class Book implements Serializable {
 
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinTable(name = "BOOK_AUTHOR", joinColumns = {
             @JoinColumn(name = "BOOK_ID", referencedColumnName = "ID")}, inverseJoinColumns = {
             @JoinColumn(name = "AUTHOR_ID", referencedColumnName = "ID")})
